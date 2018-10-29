@@ -25,7 +25,11 @@ body, html {
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  padding: $padding;
+  
+
+  header {
+    padding: $padding;
+  }
 
   header img {
     // padding: $padding;
@@ -34,17 +38,21 @@ body {
 }
 
 main {
+
+  padding: $padding;
+
   h1 {
     font-family: 'Poppins', sans-serif;
-    padding: $padding; 
+    padding: 35px; 
     font-size: 1.2em;
     text-align: center;
     font-weight: 700;
+    text-transform: capitalize;
   } 
 
   p {
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 35px;
+    padding-left: 35px;
     text-align: center;
     font-size: 15px;
     color: color(neutral-2);
@@ -97,7 +105,31 @@ main {
 
 footer {
   background: color(neutral);
-  img {
-    color: white;
+    width: 100%;
+
+  #svg {
+    fill: white;
   }
+
+  .icons {
+    width: 30px;
+    height: 30px;
+  }
+
+  ul {
+    color: white;
+    list-style-type: none;
+
+    li {
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+    }
+  }
+ 
+  
+  
 }

@@ -6,6 +6,9 @@ body, html {
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
+}
+
+body header {
   padding: 20px;
 }
 
@@ -13,17 +16,22 @@ body header img {
   height: 1em;
 }
 
+main {
+  padding: 20px;
+}
+
 main h1 {
   font-family: 'Poppins', sans-serif;
-  padding: 20px;
+  padding: 35px;
   font-size: 1.2em;
   text-align: center;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 main p {
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 35px;
+  padding-left: 35px;
   text-align: center;
   font-size: 15px;
   color: #808d99;
@@ -87,9 +95,25 @@ main form button {
 
 footer {
   background: #00252e;
+  width: 100%;
 }
 
-footer img {
+footer #svg {
+  fill: white;
+}
+
+footer .icons {
+  width: 30px;
+  height: 30px;
+}
+
+footer ul {
   color: white;
+  list-style-type: none;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */
