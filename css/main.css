@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins");
 body, html {
   height: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -12,8 +13,21 @@ body header {
   padding: 20px;
 }
 
+@media (min-width: 840px) {
+  body header {
+    padding-left: 40px;
+    padding-top: 40px;
+  }
+}
+
 body header img {
   height: 1em;
+}
+
+@media (min-width: 840px) {
+  body header img header img {
+    height: 100px;
+  }
 }
 
 main {
@@ -47,6 +61,13 @@ main h1 {
   text-transform: capitalize;
 }
 
+@media (min-width: 840px) {
+  main h1 {
+    font-size: 30px;
+    padding: 0;
+  }
+}
+
 main p {
   padding-right: 35px;
   padding-left: 35px;
@@ -73,7 +94,7 @@ main form {
     display: grid;
     -ms-grid-columns: auto 40%;
         grid-template-columns: auto 40%;
-    grid-gap: 30px;
+    grid-gap: 20px;
         grid-template-areas: "p p" "a b";
   }
 }
@@ -97,29 +118,17 @@ main form input[type=text] {
   height: 2.8em;
   border-radius: 5px;
   margin-bottom: 20px;
-  padding: 0;
 }
 
 @media (min-width: 840px) {
   main form input[type=text] {
     grid-area: a;
+    max-width: 60%;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    height: 4em;
+    padding-left: 20px;
   }
-}
-
-main form input::-webkit-input-placeholder {
-  padding-left: 20px;
-}
-
-main form input:-ms-input-placeholder {
-  padding-left: 20px;
-}
-
-main form input::-ms-input-placeholder {
-  padding-left: 20px;
-}
-
-main form input::placeholder {
-  padding-left: 20px;
 }
 
 main form button {
@@ -138,6 +147,10 @@ main form button {
 @media (min-width: 840px) {
   main form button {
     grid-area: b;
+    max-width: 40%;
+    -ms-grid-column-align: start;
+        justify-self: start;
+    height: 4em;
   }
 }
 
@@ -145,11 +158,71 @@ footer {
   background: #00252e;
   width: 100%;
   margin: 0;
+}
+
+@media (min-width: 840px) {
+  footer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "aa bb" "cc dd";
+  }
+  footer .svg {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: aa;
+    padding-top: 50px;
+    padding-left: 65px;
+  }
+  footer .icons-block {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: cc;
+    padding-left: 80px;
+    padding-top: 65px;
+  }
+  footer .nav {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: bb;
+    padding-top: 55px;
+  }
+  footer .nav ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    padding-right: 20px;
+  }
+  footer .nav ul li {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  footer #info {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: dd;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    padding-right: 38px;
+  }
+}
+
+footer .svg img {
+  padding-top: 40px;
   padding-left: 20px;
 }
 
-footer img {
-  padding-top: 40px;
+footer .icons-block {
+  padding-top: 60px;
+  padding-left: 20px;
+}
+
+@media (min-width: 840px) {
+  footer .icons-block {
+    padding-left: 80px;
+  }
 }
 
 footer .icons {
@@ -161,7 +234,7 @@ footer ul {
   color: white;
   list-style-type: none;
   padding-top: 35px;
-  padding-left: 0;
+  padding-left: 20px;
   margin: 0;
 }
 

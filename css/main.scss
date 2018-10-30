@@ -25,6 +25,7 @@ $desktop: 840px;
 
 body, html {
   height: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -34,12 +35,17 @@ body {
 
   header {
     padding: $padding;
+
+    @include desktop {
+      padding-left: 40px;
+      padding-top: 40px;
+
+    }
   }
 
   header img {
     // padding: $padding;
     height: 1em;
-  }
 }
 
 main {
@@ -70,6 +76,11 @@ main {
     text-align: center;
     font-weight: 700;
     text-transform: capitalize;
+
+    @include desktop {
+      font-size: 30px;
+      padding: 0;
+    }
   } 
 
   p {
@@ -93,7 +104,7 @@ main {
       width: 100%;
       display: grid;
       grid-template-columns: auto 40%;
-      grid-gap: 30px;
+      grid-gap: 20px;
       grid-template-areas: 
         "p p"
         "a b";
@@ -116,16 +127,16 @@ main {
       height: 2.8em;
       border-radius: 5px;
       margin-bottom: 20px;
-      padding: 0;
 
       @include desktop {
         grid-area: a;
+        max-width: 60%;
+        justify-self: end;
+        height: 4em;
+        padding-left: 20px;
       }
     }
 
-    input::placeholder {
-      padding-left: 20px;
-    }
 
     button {
       display: block;
@@ -140,6 +151,9 @@ main {
 
       @include desktop {
         grid-area: b;
+        max-width: 40%;
+        justify-self: start;
+        height: 4em;
       }
     }
   }
@@ -149,11 +163,63 @@ footer {
   background: color(neutral);
     width: 100%;
     margin: 0;
-    padding-left: $padding;
 
-    img {
-      padding-top: 40px;
+    @include desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "aa bb"
+        "cc dd";
+      
+
+        .svg {
+          grid-area: aa;
+          padding-top: 50px;
+          padding-left: 65px;
+        }
+
+        .icons-block {
+          grid-area: cc;
+          padding-left: 80px; 
+          padding-top: 65px;
+        }
+
+        .nav {
+          grid-area: bb;
+          padding-top: 55px;
+        
+          
+          ul {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            padding-right: 20px;  
+
+            li {
+              justify-self: center;
+            }
+          }
+        }
+
+        #info {
+          grid-area: dd;
+          justify-self: end;
+          padding-right: 38px;
+        }
     }
+
+    .svg img  {
+      padding-top: 40px;
+      padding-left: $padding;
+    }
+
+    .icons-block {
+      padding-top: 60px;
+      padding-left: $padding;
+
+      @include desktop {
+        padding-left: 80px;
+      }
+    }    
   
     .icons {
     width: 30px;
@@ -164,7 +230,7 @@ footer {
     color: white;
     list-style-type: none;
     padding-top: 35px;
-    padding-left: 0;
+    padding-left: $padding;
     margin: 0;
 
     li {
